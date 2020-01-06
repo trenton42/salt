@@ -278,7 +278,7 @@ def _reinterpreted_state(state):
         data = {}
         try:
             for item in salt.utils.args.shlex_split(out):
-                key, val = item.split('=')
+                key, val = item.split('=', 1)
                 data[key] = val
         except ValueError:
             state = _failout(
